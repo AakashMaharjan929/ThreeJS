@@ -10,6 +10,12 @@ const LogoIcon =({ icon }) => {
 }
 
 const LogoSection = () => {
+
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) return null;
+
+    
   return (
     <div className='md:my-20 my-10 relative'>  
      <div className="gradient-edge"></div>

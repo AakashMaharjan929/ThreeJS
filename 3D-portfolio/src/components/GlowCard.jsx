@@ -4,9 +4,15 @@ const GlowCard = ({ card, children, index }) => {
 
     const cardRefs = useRef([]);
 
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+ 
+
     const handleMouseMove = (index) => (event) => { 
+         if (isMobile) return;
+         
         const card = cardRefs.current[index];
         if(!card) return;
+
 
         const rect = card.getBoundingClientRect();
         const mouseX = event.clientX - rect.left - rect.width / 2;
@@ -21,7 +27,12 @@ const GlowCard = ({ card, children, index }) => {
     }
 
   return (
-    <div ref={(el) => (cardRefs.current[index] = el)} onMouseMove={handleMouseMove(index)} className='card card-border timeline-card rounded-xl p-10'>
+<div 
+  ref={(el) => (cardRefs.current[index] = el)} 
+  {...(!isMobile ? { onMouseMove: handleMouseMove(index) } : {})}
+  className='card card-border timeline-card rounded-xl p-10'
+>
+
 
         <div className='glow'/>
 

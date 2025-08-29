@@ -13,10 +13,11 @@ const ShowCaseSection = () => {
     const project2Ref = useRef(null);
     const project3Ref = useRef(null);
 
-    
-    
+
     
     useGSAP(() => {
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) return;
         const projects = [project1Ref.current, project2Ref.current, project3Ref.current];
         
         projects.forEach((card, index) => {

@@ -13,6 +13,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ExperienceSection = () => {
     useGSAP(() => {
+
+
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) return; 
+
+
         gsap.utils.toArray('.timeline-card').forEach((card, index) => {
             gsap.from(card, {
                 xPercent: -100,

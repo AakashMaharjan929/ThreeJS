@@ -59,17 +59,17 @@ const Hero = () => {
 
   I have strong knowledge in <span className="text-white">React, Node.js, PHP, and the MERN Stack</span>, <br />
   along with basic experience in <span className="text-white">Python, Java, C#, and C</span>.  
-   <div className="flex flex-row items-center gap-2 mt-3">
-    <a href="mailto:aakashmaharjan2222@gmail.com" className="flex items-center gap-2 hover:text-blue-400">
-      <MdEmail size={22} /> aakashmaharjan2222@gmail.com
-    </a>
-    <a href="https://github.com/AakashMaharjan929" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-blue-400">
-      <FaGithub size={22} /> GitHub
-    </a>
-    <a href="https://www.linkedin.com/in/aakash-maharjan-b28812380/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-blue-400">
-      <FaLinkedin size={22} /> LinkedIn
-    </a>
-  </div>
+  <div className="flex flex-wrap items-center gap-2 mt-3">
+  <a href="mailto:aakashmaharjan2222@gmail.com" className="flex items-center gap-2 hover:text-blue-400">
+    <MdEmail size={22} /> aakashmaharjan2222@gmail.com
+  </a>
+  <a href="https://github.com/AakashMaharjan929" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-blue-400">
+    <FaGithub size={22} /> GitHub
+  </a>
+  <a href="https://www.linkedin.com/in/aakash-maharjan-b28812380/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-blue-400">
+    <FaLinkedin size={22} /> LinkedIn
+  </a>
+</div>
 </p>
 
  <Button     
