@@ -9,6 +9,10 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 const Hero = () => {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+const displayedWords = isMobile ? words.slice(0, 3) : words; // show fewer on mobile
+
+
     useGSAP(() => {
         gsap.fromTo('.hero-text h1',
             {
@@ -39,7 +43,7 @@ const Hero = () => {
                         <h1>Shaping 
                             <span className="slide">
                                 <span className="wrapper">
-                                    {words.map((word) => (
+                                    {displayedWords.map((word) => (
                                         <span key={word.id} className="flex items-center md:gap-3 gap-1 pb-2">
                                             <img src={word.imgPath} alt={word.text} 
                                             className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50" />
@@ -86,10 +90,19 @@ const Hero = () => {
             {/* RIGHT: 3D MODEL */}
 
             <figure>
-                <div className='hero-3d-layout'>
-                    <HeroExpierience />
-                </div>
-            </figure>
+  <div className="hero-3d-layout">
+    {!isMobile ? (
+      <HeroExpierience />
+    ) : (
+      <img
+        src="/images/hero.png"
+        alt="Hero"
+        className="w-full h-full object-cover rounded-3xl"
+      />
+    )}
+  </div>
+</figure>
+
         </div>
 
         <AnimatedCounter />
