@@ -4,9 +4,9 @@ const GlowCard = ({ card, children, index }) => {
 
     const cardRefs = useRef([]);
 
+    
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
- 
-
+    
     const handleMouseMove = (index) => (event) => { 
          if (isMobile) return;
          
@@ -34,7 +34,7 @@ const GlowCard = ({ card, children, index }) => {
 >
 
 
-        <div className='glow'/>
+         {!isMobile && <div className="glow" />}
 
         <div className='flex items-center gap-1 mb-5'>
             {/* {Array.from({ length: 5 }, (_, index) => (
